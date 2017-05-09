@@ -7,7 +7,7 @@ public class MainClass {
 
     private static MainView mv = new MainView();
     private static Ingresar iv = new Ingresar();
-    private static Usuario uv = new Usuario();
+    private static Afiliar uv = new Afiliar();
     private static Prestar pv = new Prestar();
     private static Entregar ev = new Entregar();
 

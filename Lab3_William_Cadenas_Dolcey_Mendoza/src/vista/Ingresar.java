@@ -12,23 +12,28 @@ public class Ingresar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btn_Afiliar = new javax.swing.JButton();
+        btn_Ingresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txt_CodEje = new javax.swing.JTextField();
-        txt_Userejem = new javax.swing.JTextField();
+        txt_EjemName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        btn_Afiliar.setBackground(new java.awt.Color(250, 250, 250));
-        btn_Afiliar.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
-        btn_Afiliar.setText("Ingresar ejemplar");
-        btn_Afiliar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_Ingresar.setBackground(new java.awt.Color(250, 250, 250));
+        btn_Ingresar.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        btn_Ingresar.setText("Ingresar ejemplar");
+        btn_Ingresar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_Ingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_IngresarActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ingresar Ejemplar");
+        jLabel1.setText("INGRESAR EJEMPLAR");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         txt_CodEje.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
@@ -41,13 +46,13 @@ public class Ingresar extends javax.swing.JFrame {
             }
         });
 
-        txt_Userejem.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
-        txt_Userejem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_Userejem.setText("Nombre de Ejemplar");
-        txt_Userejem.setToolTipText("Nombre de Ejemplar");
-        txt_Userejem.addMouseListener(new java.awt.event.MouseAdapter() {
+        txt_EjemName.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        txt_EjemName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_EjemName.setText("Nombre de Ejemplar");
+        txt_EjemName.setToolTipText("Nombre de Ejemplar");
+        txt_EjemName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txt_UserejemMouseClicked(evt);
+                txt_EjemNameMouseClicked(evt);
             }
         });
 
@@ -57,27 +62,29 @@ public class Ingresar extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(93, 93, 93)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_CodEje, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_Userejem, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(btn_Afiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(108, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_CodEje, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_EjemName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(btn_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt_CodEje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txt_Userejem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_EjemName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_Afiliar)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(btn_Ingresar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -98,9 +105,14 @@ public class Ingresar extends javax.swing.JFrame {
         txt_CodEje.setText("");
     }//GEN-LAST:event_txt_CodEjeMouseClicked
 
-    private void txt_UserejemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_UserejemMouseClicked
-        txt_Userejem.setText("");
-    }//GEN-LAST:event_txt_UserejemMouseClicked
+    private void txt_EjemNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_EjemNameMouseClicked
+        txt_EjemName.setText("");
+    }//GEN-LAST:event_txt_EjemNameMouseClicked
+
+    private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
+        String cod=txt_CodEje.getText();
+        String name=txt_EjemName.getText();
+    }//GEN-LAST:event_btn_IngresarActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -111,10 +123,10 @@ public class Ingresar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Afiliar;
+    private javax.swing.JButton btn_Ingresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_CodEje;
-    private javax.swing.JTextField txt_Userejem;
+    private javax.swing.JTextField txt_EjemName;
     // End of variables declaration//GEN-END:variables
 }
