@@ -103,7 +103,6 @@ public class Entregar extends javax.swing.JFrame {
     private void btn_EntregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntregarActionPerformed
         String cod_user=txt_CodUser.getText();
         String cod_ejem=txt_CodEje.getText();
-        /*Se agrega a la lista de Ejemplares*/
     }//GEN-LAST:event_btn_EntregarActionPerformed
 
     private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CodEjeMouseClicked

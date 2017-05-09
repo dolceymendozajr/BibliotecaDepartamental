@@ -51,6 +51,11 @@ public class Afiliar extends javax.swing.JFrame {
         btn_Afiliar.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         btn_Afiliar.setText("Afiliar usuario");
         btn_Afiliar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_Afiliar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AfiliarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,6 +109,11 @@ public class Afiliar extends javax.swing.JFrame {
     private void txt_UsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_UsernameMouseClicked
         txt_Username.setText("");
     }//GEN-LAST:event_txt_UsernameMouseClicked
+
+    private void btn_AfiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AfiliarActionPerformed
+        String cod= txt_CodUser.getText();
+        String name= txt_Username.getText();
+    }//GEN-LAST:event_btn_AfiliarActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
