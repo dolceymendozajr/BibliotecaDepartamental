@@ -37,6 +37,11 @@ public class MainView extends javax.swing.JFrame {
         btn_Prestar.setFont(new java.awt.Font("Arial Narrow", 0, 24)); // NOI18N
         btn_Prestar.setText("Prestar Libro");
         btn_Prestar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_Prestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PrestarActionPerformed(evt);
+            }
+        });
 
         btn_Afiiliar.setBackground(new java.awt.Color(250, 250, 250));
         btn_Afiiliar.setFont(new java.awt.Font("Arial Narrow", 0, 24)); // NOI18N
@@ -63,6 +68,11 @@ public class MainView extends javax.swing.JFrame {
         btn_Entregar.setFont(new java.awt.Font("Arial Narrow", 0, 24)); // NOI18N
         btn_Entregar.setText("Entregar libro");
         btn_Entregar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_Entregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EntregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,6 +131,14 @@ public class MainView extends javax.swing.JFrame {
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
         MainClass.verIngresar();
     }//GEN-LAST:event_btn_IngresarActionPerformed
+
+    private void btn_PrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PrestarActionPerformed
+        MainClass.verPrestar();
+    }//GEN-LAST:event_btn_PrestarActionPerformed
+
+    private void btn_EntregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntregarActionPerformed
+        MainClass.verEntregar();
+    }//GEN-LAST:event_btn_EntregarActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
