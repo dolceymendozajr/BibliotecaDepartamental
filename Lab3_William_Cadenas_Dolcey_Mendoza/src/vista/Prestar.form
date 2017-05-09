@@ -49,13 +49,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txt_CodEje" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Component id="txt_EjemName" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="txt_CodEje" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="txt_CodUser" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="btn_Ingresar" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="btn_Prestar" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -67,19 +67,19 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="txt_CodEje" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="txt_EjemName" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_CodUser" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btn_Ingresar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_Prestar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btn_Ingresar">
+        <Component class="javax.swing.JButton" name="btn_Prestar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="fa" green="fa" red="fa" type="rgb"/>
@@ -87,7 +87,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Narrow" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ingresar ejemplar"/>
+            <Property name="text" type="java.lang.String" value="Prestar Ejemplar"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder/>
@@ -95,7 +95,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_IngresarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_PrestarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -104,7 +104,7 @@
               <Font name="Arial Narrow" size="24" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="INGRESAR EJEMPLAR"/>
+            <Property name="text" type="java.lang.String" value="PRESTAR EJEMPLAR"/>
             <Property name="horizontalTextPosition" type="int" value="10"/>
           </Properties>
         </Component>
@@ -121,17 +121,17 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_CodEjeMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txt_EjemName">
+        <Component class="javax.swing.JTextField" name="txt_CodUser">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Narrow" size="18" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Nombre de Ejemplar"/>
-            <Property name="toolTipText" type="java.lang.String" value="Nombre de Ejemplar"/>
+            <Property name="text" type="java.lang.String" value="Codigo de Usuario"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_EjemNameMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_CodUserMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

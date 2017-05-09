@@ -1,8 +1,11 @@
 package vista;
 
-public class Usuario extends javax.swing.JFrame {
+import Modelo.MultilistaAfiliados;
+import javax.swing.JOptionPane;
 
-    public Usuario() {
+public class Afiliar extends javax.swing.JFrame {
+
+    public Afiliar() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -22,9 +25,9 @@ public class Usuario extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Afiliar Usuario");
+        jLabel1.setText("AFILIAR USUARIO");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         txt_CodUser.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
@@ -51,42 +54,41 @@ public class Usuario extends javax.swing.JFrame {
         btn_Afiliar.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         btn_Afiliar.setText("Afiliar usuario");
         btn_Afiliar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btn_Afiliar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AfiliarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_CodUser, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(88, 88, 88))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(131, 131, 131)
-                            .addComponent(btn_Afiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap()))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_Username, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_CodUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_Afiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(txt_CodUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txt_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(12, 12, 12)
-                    .addComponent(jLabel1)
-                    .addGap(108, 108, 108)
-                    .addComponent(btn_Afiliar)
-                    .addContainerGap(12, Short.MAX_VALUE)))
+                .addGap(35, 35, 35)
+                .addComponent(btn_Afiliar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -97,7 +99,7 @@ public class Usuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -110,10 +112,24 @@ public class Usuario extends javax.swing.JFrame {
     private void txt_UsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_UsernameMouseClicked
         txt_Username.setText("");
     }//GEN-LAST:event_txt_UsernameMouseClicked
+
+    private void btn_AfiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AfiliarActionPerformed
+        int cod = -1;
+        try {
+            cod = Integer.parseInt(txt_CodUser.getText());
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Codigo invalido");
+        }
+        String name = txt_Username.getText();
+        MultilistaAfiliados afi = new MultilistaAfiliados();
+        afi.InsertarAfiliado(name, cod);
+        afi.verListaDeAfiliados();
+    }//GEN-LAST:event_btn_AfiliarActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Usuario().setVisible(true);
+                new Afiliar().setVisible(true);
             }
         });
     }
