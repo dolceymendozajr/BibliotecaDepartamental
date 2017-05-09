@@ -1,6 +1,5 @@
 package controlador;
 
-import Modelo.*;
 import vista.*;
 
 public class MainClass {
@@ -10,7 +9,7 @@ public class MainClass {
     private static Afiliar uv = new Afiliar();
     private static Prestar pv = new Prestar();
     private static Entregar ev = new Entregar();
-
+    
     public static void main(String[] args) {
 
         mv.setVisible(true);
@@ -28,13 +27,6 @@ public class MainClass {
         ev.setVisible(false);
         ev.setResizable(false);
         
-        MultilistaAfiliados afi = new MultilistaAfiliados();
-        afi.InsertarAfiliado("William", 100);
-        afi.InsertarAfiliado("Dolcey", 99);
-        afi.InsertarAfiliado("Jesus", 88);
-        afi.InsertarAfiliado("Laura", 90);
-        afi.InsertarAfiliado("Hector", 101);
-        afi.verListaDeAfiliados();
     }
 
     public static void verIngresar() {

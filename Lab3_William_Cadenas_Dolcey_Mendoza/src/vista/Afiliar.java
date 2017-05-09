@@ -1,5 +1,8 @@
 package vista;
 
+import Modelo.MultilistaAfiliados;
+import javax.swing.JOptionPane;
+
 public class Afiliar extends javax.swing.JFrame {
 
     public Afiliar() {
@@ -111,8 +114,17 @@ public class Afiliar extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_UsernameMouseClicked
 
     private void btn_AfiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AfiliarActionPerformed
-        String cod= txt_CodUser.getText();
-        String name= txt_Username.getText();
+        int cod = -1;
+        try {
+            cod = Integer.parseInt(txt_CodUser.getText());
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Codigo invalido");
+        }
+        String name = txt_Username.getText();
+        MultilistaAfiliados afi = new MultilistaAfiliados();
+        afi.InsertarAfiliado(name, cod);
+        afi.verListaDeAfiliados();
     }//GEN-LAST:event_btn_AfiliarActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
