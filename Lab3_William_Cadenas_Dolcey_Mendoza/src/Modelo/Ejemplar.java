@@ -5,5 +5,5 @@ package Modelo;
  * @author William Cadenas
  */
 public class Ejemplar {
-    
+      
 }

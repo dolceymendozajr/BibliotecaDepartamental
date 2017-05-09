@@ -29,6 +29,7 @@ public class MainClass {
         afi.InsertarAfiliado("Jesus", 88);
         afi.InsertarAfiliado("Laura", 90);
         afi.InsertarAfiliado("Hector", 101);
+        afi.InsertarAfiliado("Hector", 10);
         afi.verListaDeAfiliados();
     }
 
