@@ -1,16 +1,15 @@
 package controlador;
 
-import Modelo.MultilistaAfiliados;
-import Modelo.MultilistaAutores;
-import vista.Ingresar;
-import vista.MainView;
-import vista.Usuario;
+import Modelo.*;
+import vista.*;
 
 public class MainClass {
 
     private static MainView mv = new MainView();
     private static Ingresar iv = new Ingresar();
     private static Usuario uv = new Usuario();
+    private static Prestar pv = new Prestar();
+    private static Entregar ev = new Entregar();
 
     public static void main(String[] args) {
 
@@ -22,6 +21,12 @@ public class MainClass {
 
         uv.setVisible(false);
         uv.setResizable(false);
+        
+        pv.setVisible(false);
+        pv.setResizable(false);
+
+        ev.setVisible(false);
+        ev.setResizable(false);
         
         MultilistaAfiliados afi = new MultilistaAfiliados();
         afi.InsertarAfiliado("William", 100);
@@ -38,6 +43,14 @@ public class MainClass {
 
     public static void verUsuario() {
         uv.setVisible(true);
+    }
+    
+    public static void verPrestar() {
+        pv.setVisible(true);
+    }
+
+    public static void verEntregar() {
+        ev.setVisible(true);
     }
 
 }
