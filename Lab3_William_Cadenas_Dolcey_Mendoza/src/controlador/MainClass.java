@@ -15,7 +15,7 @@ public class MainClass {
 
         mv.setVisible(true);
         mv.setResizable(false);
-        
+
         iv.setVisible(false);
         iv.setResizable(false);
 
