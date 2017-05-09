@@ -13,15 +13,20 @@ public class MainClass {
     public static void main(String[] args) {
 
         mv.setVisible(true);
+        mv.setResizable(false);
+        
         iv.setVisible(false);
+        iv.setResizable(false);
+
         uv.setVisible(false);
+        uv.setResizable(false);
 
     }
 
     public static void verIngresar() {
         iv.setVisible(true);
     }
-    
+
     public static void verUsuario() {
         uv.setVisible(true);
     }
