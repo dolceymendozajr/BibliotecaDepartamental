@@ -1,6 +1,5 @@
 package Modelo;
 
-import Modelo.Nodo;
 
 public class Ejemplar extends Nodo{
     
@@ -8,5 +7,11 @@ public class Ejemplar extends Nodo{
     private boolean disponible;
     private int codigoUsuario;
     private Nodo linkPrincipal;
+
+    
+    @Override
+    public void setLinkPrincipal(Nodo linkPrincipal) {
+        this.linkPrincipal = linkPrincipal; 
+    }
     
 }
