@@ -1,5 +1,9 @@
 package Modelo;
 
+/**
+ * Una multilista con la información de los autores, y cada uno de los libros.
+ * @author William Cadenas
+ */
 public class MultilistaAutores {
 
     private Autor primero;
@@ -47,7 +51,7 @@ public class MultilistaAutores {
         return null;
     }
 
-    public void verLista() {
+    public void verListaDeAutores() {
         aux = primero;
         while (aux != null) {
             System.out.println(aux.getNombre());

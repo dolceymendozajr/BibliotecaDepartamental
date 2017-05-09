@@ -1,5 +1,9 @@
 package Modelo;
 
+/**
+ * Estos seran los nodos de la lista de autor 
+ * @author William Cadenas
+ */
 public class Libro {
 
     private String nombre;

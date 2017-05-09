@@ -1,11 +1,8 @@
 package Modelo;
 
-/*
-Una multilista con la información de los autores, y cada uno de los libros.
- */
+
 /**
  * Estos van a ser los nodos de la multilisa de autores
- *
  * @author William Cadenas
  */
 public class Autor {

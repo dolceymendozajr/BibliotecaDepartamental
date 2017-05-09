@@ -1,5 +1,6 @@
 package controlador;
 
+import Modelo.MultilistaAfiliados;
 import Modelo.MultilistaAutores;
 import vista.Ingresar;
 import vista.MainView;
@@ -21,17 +22,14 @@ public class MainClass {
 
         uv.setVisible(false);
         uv.setResizable(false);
-        MultilistaAutores autores = new MultilistaAutores();
-        autores.InsertarAutor("William");
-        autores.InsertarAutor("Dolcey");
-        autores.InsertarAutor("Jesus");
-        autores.InsertarAutor("Hanye");
         
-        autores.agregarNuevoLibro("William", "multiverse", 100);
-        autores.agregarNuevoLibro("William", "alterit", 101);
-        autores.agregarNuevoLibro("William", "memoria", 102);
-        
-        autores.verlistaDeLibros("William");
+        MultilistaAfiliados afi = new MultilistaAfiliados();
+        afi.InsertarAfiliado("William", 100);
+        afi.InsertarAfiliado("Dolcey", 99);
+        afi.InsertarAfiliado("Jesus", 88);
+        afi.InsertarAfiliado("Laura", 90);
+        afi.InsertarAfiliado("Hector", 101);
+        afi.verListaDeAfiliados();
     }
 
     public static void verIngresar() {
