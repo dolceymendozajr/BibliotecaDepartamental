@@ -1,6 +1,5 @@
 package vista;
 
-
 public class Prestar extends javax.swing.JFrame {
 
     public Prestar() {
@@ -103,8 +102,8 @@ public class Prestar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_PrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PrestarActionPerformed
-        String name=txt_CodUser.getText();
-        String cod=txt_CodEje.getText();
+        String name = txt_CodUser.getText();
+        String cod = txt_CodEje.getText();
     }//GEN-LAST:event_btn_PrestarActionPerformed
 
     private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CodEjeMouseClicked

@@ -39,35 +39,36 @@ public class MultilistaAfiliados {
                     antep = p;
                     p = p.getLinkPrincipal();
                 }
-            }
-            Afiliado q = new Afiliado(nombre, codigo);
-            q.setLinkEjemplar(null);
-            if (p.getCodigo() > codigo) {
-                if (p == primero) {
-                    q.setLinkPrincipal(primero);//cuando es menor que el ptr(primero)
-                    primero = q;
+                Afiliado q = new Afiliado(nombre, codigo);
+                q.setLinkEjemplar(null);
+                if (p.getCodigo() > codigo) {
+                    if (p == primero) {
+                        q.setLinkPrincipal(primero);//cuando es menor que el ptr(primero)
+                        primero = q;
+                    } else {
+                        antep.setLinkPrincipal(q);//insercion en la mitad de la lista
+                        q.setLinkPrincipal(p);
+                    }
+                    tamaño++;//el tamaño crece en cualquiera de los dos casos
                 } else {
-                    antep.setLinkPrincipal(q);//insercion en la mitad de la lista
-                    q.setLinkPrincipal(p);
+                    p.setLinkPrincipal(q);//cuando es el ultimo 
+                    q.setLinkPrincipal(null);
+                    ultimo = q;
+                    tamaño++;
                 }
-                tamaño++;//el tamaño crece en cualquiera de los dos casos
-            } else {
-                p.setLinkPrincipal(q);//cuando es el ultimo 
-                q.setLinkPrincipal(null);
-                ultimo = q;
-                tamaño++;
             }
-
         }
 
     }
 
     public void verListaDeAfiliados() {
         aux = primero;
+        System.out.println("Inicio");
         while (aux != null) {
-            System.out.println(aux.getNombre()+","+aux.getCodigo());
+            System.out.println(aux.getNombre() + "," + aux.getCodigo());
             aux = aux.getLinkPrincipal();
         }
+        System.out.println("Fin");
     }
 
     public Afiliado buscarAfiliado(int codigo) {//busqueda por codigo

@@ -9,6 +9,7 @@ import java.util.Date;
 public class Ejemplar {
       private String nombre;
       private boolean estado;
+      private int codigoEmjemplar;
       private int cosgioAfiliado;
       private Date fecha;//aun no estoy seguro se dejar este atributo de tipo date 
 }
