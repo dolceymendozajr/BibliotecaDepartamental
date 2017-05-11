@@ -10,7 +10,7 @@ public class Ingresar extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
@@ -173,11 +173,11 @@ public class Ingresar extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CodEjeMouseClicked
+    private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {                                        
         txt_CodEje.setText("");
-    }//GEN-LAST:event_txt_CodEjeMouseClicked
+    }                                       
 
     private void txt_LibroNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_LibroNameMouseClicked
         txt_LibroName.setText("");
@@ -216,7 +216,7 @@ public class Ingresar extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton btn_Ingresar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
