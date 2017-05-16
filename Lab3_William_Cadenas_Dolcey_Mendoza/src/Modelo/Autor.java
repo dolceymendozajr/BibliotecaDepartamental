@@ -9,7 +9,6 @@ public class Autor {
 
     private String nombre;
     private Autor linkPrincipal;
-    private Autor linkLibro;
     private Libro primero;
     private Libro ultimo;
     private int numeroDelibros;
@@ -60,12 +59,13 @@ public class Autor {
         this.linkPrincipal = linkPrincipal;
     }
 
-    public Autor getLinkLibro() {
-        return linkLibro;
+    public Libro getPrimero() {
+        return primero;
     }
 
-    public void setLinkLibro(Autor linkLibro) {
-        this.linkLibro = linkLibro;
+    public Libro getUltimo() {
+        return ultimo;
     }
-
+    
+    
 }

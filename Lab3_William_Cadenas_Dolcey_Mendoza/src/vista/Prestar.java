@@ -1,6 +1,5 @@
 package vista;
 
-
 public class Prestar extends javax.swing.JFrame {
 
     public Prestar() {
@@ -70,7 +69,7 @@ public class Prestar extends javax.swing.JFrame {
                             .addComponent(txt_CodEje, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_CodUser, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(34, 34, 34)
                         .addComponent(btn_Prestar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -103,8 +102,10 @@ public class Prestar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_PrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PrestarActionPerformed
-        String name=txt_CodUser.getText();
-        String cod=txt_CodEje.getText();
+        String nameUsuario = txt_CodUser.getText();
+        String codEjem = txt_CodEje.getText();
+        //TODO crear el metodo que agrege un ejemplar existennte a un afiliado previamente creado
+        //este metodo debe ubicarse en el main y recibe nameUser y CodEjem
     }//GEN-LAST:event_btn_PrestarActionPerformed
 
     private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CodEjeMouseClicked

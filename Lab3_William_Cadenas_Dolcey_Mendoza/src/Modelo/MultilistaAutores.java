@@ -2,6 +2,7 @@ package Modelo;
 
 /**
  * Una multilista con la información de los autores, y cada uno de los libros.
+ *
  * @author William Cadenas
  */
 public class MultilistaAutores {
@@ -27,7 +28,6 @@ public class MultilistaAutores {
             ultimo = aux;
             tamaño++;
         }
-        aux.setLinkLibro(null);
         aux.setLinkPrincipal(null);
     }
 
@@ -38,6 +38,41 @@ public class MultilistaAutores {
         } else {
             System.out.println("El autor especificado no existe");
         }
+    }
+
+    public boolean libroExiste(String nombreA, String nombreL) {
+        aux = buscarAutor(nombreA);
+        if (aux != null) {
+            Libro libro = aux.getPrimero();
+            while (libro != null) {
+                if (libro.getNombre().equalsIgnoreCase(nombreL)) {
+                    libro.updateNumeroEjemplares(1);//aumenta el numero de ejemplares de el libro
+                    return true;
+                }
+                libro = libro.getLinkPrincipal();
+            }
+        } else {
+            System.out.println("El autor especificado no existe");
+        }
+        return false;
+    }
+
+    public boolean libroExiste(String nombreA, int codLibro) {
+        aux = buscarAutor(nombreA);
+        if (aux != null) {
+            Libro libro = aux.getPrimero();
+            while (libro != null) {
+                System.out.println("libro:" + libro.getNombre());
+                if (libro.getCodigoLibro() == codLibro) {
+                    libro.updateNumeroEjemplares(1);//aumenta el numero de ejemplares de el libro
+                    return true;
+                }
+                libro = libro.getLinkPrincipal();
+            }
+        } else {
+            System.out.println("El autor especificado no existe");
+        }
+        return false;
     }
 
     public Autor buscarAutor(String nombre) {
@@ -58,14 +93,30 @@ public class MultilistaAutores {
             aux = aux.getLinkPrincipal();
         }
     }
-    
-    public void verlistaDeLibros(String nombre){
+
+    public void verlistaDeLibros(String nombre) {
         aux = buscarAutor(nombre);
         if (aux != null) {
             aux.verLibros();
         } else {
             System.out.println("El autor especificado no existe");
         }
+    }
+
+    public String buscarNombre(String nombreA, int codLibro) {
+        aux = buscarAutor(nombreA);
+        if (aux != null) {
+            Libro libro = aux.getPrimero();
+            while (libro != null) {
+                if (libro.getCodigoLibro() == codLibro) {
+                    return libro.getNombre();
+                }
+                libro = libro.getLinkPrincipal();
+            }
+        } else {
+            System.out.println("El autor especificado no existe");
+        }
+        return null;
     }
 
     public Autor getPrimero() {
@@ -87,4 +138,5 @@ public class MultilistaAutores {
     public int getTamaño() {
         return tamaño;
     }
+
 }

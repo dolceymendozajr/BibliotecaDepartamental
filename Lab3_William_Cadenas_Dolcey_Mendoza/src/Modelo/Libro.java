@@ -9,10 +9,19 @@ public class Libro {
     private String nombre;
     private int codigoLibro;
     private Libro linkPrincipal;
+    private int numeroEjemplares;
 
     public Libro(String nombre, int codigoLibro) {
         this.nombre = nombre;
         this.codigoLibro = codigoLibro;
+    }
+
+    public int getNumeroEjemplares() {
+        return numeroEjemplares;
+    }
+
+    public void updateNumeroEjemplares(int numero) {
+        numeroEjemplares = numeroEjemplares + numero;
     }
 
     public String getNombre() {
