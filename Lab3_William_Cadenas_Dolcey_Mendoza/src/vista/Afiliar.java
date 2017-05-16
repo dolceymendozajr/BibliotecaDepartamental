@@ -116,16 +116,24 @@ public class Afiliar extends javax.swing.JFrame {
 
     private void btn_AfiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AfiliarActionPerformed
         int cod = -1;
+        boolean vald = true;
         try {
             cod = Integer.parseInt(txt_CodUser.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Codigo invalido");
+            vald = false;
         }
-        String name = txt_Username.getText().toLowerCase();
-        MainClass.agregarAfiliado(name, cod);
+        if (cod >= 1) {
+            String name = txt_Username.getText().toLowerCase();
+            MainClass.agregarAfiliado(name, cod);
+            JOptionPane.showMessageDialog(this, "Usuario afiliado");
+            this.dispose();
+        } else if (vald) {
+            JOptionPane.showMessageDialog(this, "Codigo invalido");
+        }
     }//GEN-LAST:event_btn_AfiliarActionPerformed
-    
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

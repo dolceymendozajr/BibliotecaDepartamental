@@ -13,6 +13,7 @@ public class SetFecha extends javax.swing.JFrame {
      */
     public SetFecha() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,7 +34,7 @@ public class SetFecha extends javax.swing.JFrame {
         txt_Año = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         jLabel2.setText("Digite la fecha deseada:");
