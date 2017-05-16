@@ -1,6 +1,7 @@
 package vista;
 
 import controlador.MainClass;
+import javax.swing.JOptionPane;
 
 public class Ingresar extends javax.swing.JFrame {
 
@@ -189,7 +190,7 @@ public class Ingresar extends javax.swing.JFrame {
             int codEjem = Integer.parseInt(txt_CodEje.getText());
             int codLibro = Integer.parseInt(txt_CodLib.getText());
             String autorName = txt_AutorName.getText().toLowerCase();
-            MainClass.agregarEjemplar(codLibro, codEjem, autorName);
+            JOptionPane.showMessageDialog(this, MainClass.agregarEjemplar(codLibro, codEjem, autorName));
         } else {
             int codEjem = Integer.parseInt(txt_CodEje.getText());
             String libroName = txt_LibroName.getText().toLowerCase();
@@ -229,5 +230,5 @@ public class Ingresar extends javax.swing.JFrame {
     private javax.swing.JTextField txt_CodEje;
     private javax.swing.JTextField txt_CodLib;
     private javax.swing.JTextField txt_LibroName;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }

@@ -17,19 +17,24 @@ public class ListaDobleEjemplares {
         this.ultimo = null;
     }
 
-    public void agregarEjemplar(String name, int codigo) {
-        aux = new EjemplarDoble(name, codigo);
-        if (primero == null) {
-            primero = aux;
-            ultimo = aux;
-            aux.setLinkLeft(null);
-            tamaño = 1;
-        } else {
-            ultimo.setLinks(aux);
-            ultimo = aux;
-            tamaño++;
+    public String agregarEjemplar(String name, int codigo) {
+        if (ValidacionCodEjem(codigo)){
+            aux = new EjemplarDoble(name, codigo);
+            if (primero == null) {
+                primero = aux;
+                ultimo = aux;
+                aux.setLinkLeft(null);
+                tamaño = 1;
+            } else {
+                ultimo.setLinks(aux);
+                ultimo = aux;
+                tamaño++;
+            }
+            aux.setLinkRight(null);
+            return "Nodo añadido con exito!";
+        }else{
+            return "Ya se encuntra un ejemplar con el mismo codigo";
         }
-        aux.setLinkRight(null);
     }
 
     public void verListaDesdeIncio() {
@@ -55,5 +60,17 @@ public class ListaDobleEjemplares {
     public int getTamaño() {
         return tamaño;
     }
-    
+
+    private boolean ValidacionCodEjem(int codigo) {
+        aux = primero;
+        boolean sw = true;
+        while (aux != null && sw == true) {
+            if (aux.getCodigoEmjemplar() == codigo) {
+                sw = false;
+                return sw;
+            }
+            aux =  aux.getLinkRight();
+        }
+        return sw;
+    }
 }

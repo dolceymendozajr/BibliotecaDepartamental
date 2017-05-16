@@ -81,14 +81,15 @@ public class MainClass {
         System.out.println("tamaño:" + ldejem.getTamaño());
     }
 
-    public static void agregarEjemplar(int codLibro, int codEjem, String autorName) {
+    public static String agregarEjemplar(int codLibro, int codEjem, String autorName) {
         boolean observador = aut.libroExiste(autorName, codLibro);
         String nombreLibro = aut.buscarNombre(autorName, codLibro);
         if (observador == true) {//libro si existe
-            ldejem.agregarEjemplar(nombreLibro, codEjem);
+            return ldejem.agregarEjemplar(nombreLibro, codEjem);
         }
-        ldejem.verListaDesdeIncio();
-        System.out.println("tamaño:" + ldejem.getTamaño());
+        //ldejem.verListaDesdeIncio();
+        //System.out.println("tamaño:" + ldejem.getTamaño());
+        return "el autor o el libro no ese encuenttran en la base datos";
     }
 
     public static void setFechaActual(int dia, int mes, int año) {
