@@ -35,18 +35,16 @@ public class MainClass {
 
         ev.setVisible(false);
         ev.setResizable(false);
-        
+
         fecha.setVisible(false);
         fecha.setResizable(false);
-        
+
         aut.InsertarAutor("william");
         aut.InsertarAutor("hector");
-        aut.InsertarAutor("Hayellys");
         aut.agregarNuevoLibro("william", "multiverso", 100);
         aut.agregarNuevoLibro("william", "memoria", 101);
         aut.agregarNuevoLibro("william", "utopia", 102);
         aut.agregarNuevoLibro("hector", "cien años de soledad", 200);
-        aut.agregarNuevoLibro("Hanyellys", "habitos de ricos", 300);
     }
 
     public static void verIngresar() {
@@ -95,8 +93,7 @@ public class MainClass {
 
     public static void setFechaActual(int dia, int mes, int año) {
         fechaActual = new Date(año, mes, dia);
-        System.out.println("fecha actual:" + fechaActual.getDate() + "/" + fechaActual.getMonth() + "/" + fechaActual.getYear());
-        
+        //System.out.println("fecha actual:" + fechaActual.getDate() + "/" + fechaActual.getMonth() + "/" + fechaActual.getYear());    
     }
 
 }
