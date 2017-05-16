@@ -1,6 +1,8 @@
 package vista;
 
 import controlador.MainClass;
+//import java.util.Calendar;
+//import java.util.Date;
 
 /**
  *
@@ -114,6 +116,19 @@ public class SetFecha extends javax.swing.JFrame {
         int año = Integer.parseInt(txt_Año.getText());
         MainClass.setFechaActual(dia, mes, año);
         this.dispose();
+        //Prueba de Dates y Calendar
+        
+//        Date d=new Date();
+//            Calendar c = Calendar.getInstance();
+//            int de= c.get(Calendar.DATE);
+//            System.out.println(de);
+//            int da= c.get(Calendar.DATE)+20;
+//            System.out.println(da);
+//            int dif=de-da;
+//            if(dif<0){
+//                dif=dif*-1;
+//                System.out.println("Diferencia de dias entre las fechas "+ dif);
+//            }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
