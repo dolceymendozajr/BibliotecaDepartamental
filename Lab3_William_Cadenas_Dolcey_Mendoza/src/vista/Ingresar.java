@@ -196,6 +196,7 @@ public class Ingresar extends javax.swing.JFrame {
             String libroName = txt_LibroName.getText().toLowerCase();
             String autorName = txt_AutorName.getText().toLowerCase();
             MainClass.agregarEjemplar(libroName, codEjem, autorName);
+            JOptionPane.showMessageDialog(this, MainClass.agregarEjemplar(libroName, codEjem, autorName));
         }
 
 

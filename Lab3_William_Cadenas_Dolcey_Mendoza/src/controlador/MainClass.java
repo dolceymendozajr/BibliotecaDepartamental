@@ -72,13 +72,14 @@ public class MainClass {
         afi.verListaDeAfiliados();
     }
 
-    public static void agregarEjemplar(String nameL, int codEjem, String autorName) {
+    public static String agregarEjemplar(String nameL, int codEjem, String autorName) {
         boolean observador = aut.libroExiste(autorName, nameL);
         if (observador == true) {//libro si existe
-            ldejem.agregarEjemplar(nameL, codEjem);
+            return ldejem.agregarEjemplar(nameL, codEjem);
         }
-        ldejem.verListaDesdeIncio();
-        System.out.println("tamaño:" + ldejem.getTamaño());
+        //ldejem.verListaDesdeIncio();
+        //System.out.println("tamaño:" + ldejem.getTamaño());
+        return "el autor o el libro no ese encuenttran en la base datos";
     }
 
     public static String agregarEjemplar(int codLibro, int codEjem, String autorName) {
