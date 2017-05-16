@@ -34,14 +34,9 @@ public class Ingresar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btn_Ingresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txt_CodEje = new javax.swing.JTextField();
         txt_LibroName = new javax.swing.JTextField();
         txt_AutorName = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jRadioButton_codigo = new javax.swing.JRadioButton();
-        jRadioButton_nombre = new javax.swing.JRadioButton();
         txt_CodLib = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,16 +56,6 @@ public class Ingresar extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("INGRESAR EJEMPLAR");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-
-        txt_CodEje.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
-        txt_CodEje.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_CodEje.setText("Codigo de Ejemplar");
-        txt_CodEje.setToolTipText("Codigo de Ejemplar");
-        txt_CodEje.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txt_CodEjeMouseClicked(evt);
-            }
-        });
 
         txt_LibroName.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         txt_LibroName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -92,14 +77,6 @@ public class Ingresar extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Arial Narrow", 0, 13)); // NOI18N
-        jLabel2.setText("Busqueda por:");
-
-        jRadioButton_codigo.setSelected(true);
-        jRadioButton_codigo.setText("codigo");
-
-        jRadioButton_nombre.setText("nombre");
-
         txt_CodLib.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         txt_CodLib.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_CodLib.setText("Codigo del libro");
@@ -110,38 +87,22 @@ public class Ingresar extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Obligatorio:");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(btn_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(28, 28, 28))
-                        .addComponent(txt_AutorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_CodEje, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jRadioButton_codigo)
-                            .addGap(54, 54, 54)
-                            .addComponent(jRadioButton_nombre))
-                        .addComponent(txt_LibroName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_CodLib, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jLabel2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txt_LibroName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_CodLib, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_AutorName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(btn_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -149,25 +110,15 @@ public class Ingresar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton_codigo)
-                    .addComponent(jRadioButton_nombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txt_LibroName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txt_CodLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt_AutorName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txt_CodEje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(btn_Ingresar)
-                .addGap(12, 12, 12))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -185,25 +136,12 @@ public class Ingresar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
-        System.out.println(jRadioButton_codigo.isSelected());
-        if (jRadioButton_codigo.isSelected()) {
-            int codEjem = Integer.parseInt(txt_CodEje.getText());
-            int codLibro = Integer.parseInt(txt_CodLib.getText());
-            String autorName = txt_AutorName.getText().toLowerCase();
-            JOptionPane.showMessageDialog(this, MainClass.agregarEjemplar(codLibro, codEjem, autorName));
-        } else {
-            int codEjem = Integer.parseInt(txt_CodEje.getText());
+            int codEjem = Integer.parseInt(txt_CodLib.getText());
             String libroName = txt_LibroName.getText().toLowerCase();
             String autorName = txt_AutorName.getText().toLowerCase();
-            MainClass.agregarEjemplar(libroName, codEjem, autorName);
             JOptionPane.showMessageDialog(this, MainClass.agregarEjemplar(libroName, codEjem, autorName));
-        }
 
     }//GEN-LAST:event_btn_IngresarActionPerformed
-
-    private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CodEjeMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_CodEjeMouseClicked
 
     private void txt_LibroNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_LibroNameMouseClicked
         txt_LibroName.setText("");
@@ -256,13 +194,8 @@ public class Ingresar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Ingresar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton_codigo;
-    private javax.swing.JRadioButton jRadioButton_nombre;
     private javax.swing.JTextField txt_AutorName;
-    private javax.swing.JTextField txt_CodEje;
     private javax.swing.JTextField txt_CodLib;
     private javax.swing.JTextField txt_LibroName;
     // End of variables declaration//GEN-END:variables
