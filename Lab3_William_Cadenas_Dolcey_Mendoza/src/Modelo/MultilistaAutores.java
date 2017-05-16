@@ -17,53 +17,46 @@ public class MultilistaAutores {
         this.ultimo = null;
     }
 
-    public void InsertarAutor(String nombre) {
-        aux = new Autor(nombre);
-        if (primero == null) {
-            primero = aux;
-            ultimo = aux;
-            tamaño = 1;
+    public String AgregarAutor(String nombre) {
+        if (ValidarNombre(nombre)) {
+            aux = new Autor(nombre);
+            if (primero == null) {
+                primero = aux;
+                ultimo = aux;
+                tamaño = 1;
+            } else {
+                ultimo.setLinkPrincipal(aux);
+                ultimo = aux;
+                tamaño++;
+            }
+            aux.setLinkPrincipal(null);
+            return "Nuevo autor añadido con exito!";
         } else {
-            ultimo.setLinkPrincipal(aux);
-            ultimo = aux;
-            tamaño++;
+            return "Ya existe un autor con el mismo nombre";
         }
-        aux.setLinkPrincipal(null);
     }
 
     public void agregarNuevoLibro(String nombreA, String nombreL, int codigoL) {
         aux = buscarAutor(nombreA);
         if (aux != null) {
-            aux.agregarEjemplar(new Ejemplar(nombreL, codigoL));
+            aux.agregarEjemplar(nombreL, codigoL);
         } else {
             System.out.println("El autor especificado no existe");
         }
     }
 
-    public boolean libroExiste(String nombreA, String nombreL) {
-        aux = buscarAutor(nombreA);
-        if (aux != null) {
-            Ejemplar libro = aux.getPrimero();
-            while (libro != null) {
-                if (libro.getNombre().equalsIgnoreCase(nombreL)) {
-                    return true;
-                }
-                libro = libro.getLinkRight();
-            }
-        } else {
-            System.out.println("El autor especificado no existe");
-        }
-        return false;
+    public void agregarNuevoLibro(Autor autor, String nombreL, int codigoL) {
+        aux = autor;
+        aux.agregarEjemplar(nombreL, codigoL);
     }
 
-    public boolean libroExiste(String nombreA, int codLibro) {
+    public boolean libroExiste(String nombreA, int codigo) {
         aux = buscarAutor(nombreA);
         if (aux != null) {
             Ejemplar libro = aux.getPrimero();
             while (libro != null) {
-                System.out.println("libro:" + libro.getNombre());
-                if (libro.getCodigoEmjemplar() == codLibro) {
-                    return true;
+                if (libro.getCodigoEjemplar() == codigo) {
+                    return true;//el codigo ya existe
                 }
                 libro = libro.getLinkRight();
             }
@@ -106,7 +99,7 @@ public class MultilistaAutores {
         if (aux != null) {
             Ejemplar libro = aux.getPrimero();
             while (libro != null) {
-                if (libro.getCodigoEmjemplar() == codLibro) {
+                if (libro.getCodigoEjemplar() == codLibro) {
                     return libro.getNombre();
                 }
                 libro = libro.getLinkRight();
@@ -135,6 +128,19 @@ public class MultilistaAutores {
 
     public int getTamaño() {
         return tamaño;
+    }
+
+    private boolean ValidarNombre(String nombre) {
+        aux = primero;
+        boolean sw = true;
+        while (aux != null && sw == true) {
+            if (aux.getNombre().equalsIgnoreCase(nombre)) {
+                sw = false;
+                return sw;
+            }
+            aux = aux.getLinkPrincipal();
+        }
+        return sw;
     }
 
 }

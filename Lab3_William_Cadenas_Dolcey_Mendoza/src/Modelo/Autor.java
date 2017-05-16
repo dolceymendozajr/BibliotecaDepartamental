@@ -1,8 +1,8 @@
 package Modelo;
 
-
 /**
  * Estos van a ser los nodos de la multilisa de autores
+ *
  * @author William Cadenas
  */
 public class Autor {
@@ -11,20 +11,35 @@ public class Autor {
     private Autor linkPrincipal;
     private Ejemplar primero;
     private Ejemplar ultimo;
+    private Ejemplar aux;
     private int numeroDelibros;
 
-    public void agregarEjemplar(Ejemplar libro) {
-        if (primero == null) {
-            primero = libro;
-            ultimo = libro;
-            numeroDelibros = 1;
-        } else {
-            libro.setLinkRight(null);
-            ultimo.setLinkRight(libro);
-            ultimo = libro;
-            numeroDelibros++;
+    public void agregarEjemplar(String name, int codigo) {
+            aux = new Ejemplar(name, codigo);
+            if (primero == null) {
+                primero = aux;
+                ultimo = aux;
+                aux.setLinkLeft(null);
+                numeroDelibros = 1;
+            } else {
+                ultimo.setLinks(aux);
+                ultimo = aux;
+                numeroDelibros++;
+            }
+            aux.setLinkRight(null);
+    }
+
+    private boolean ValidacionCodEjem(int codigo) {
+        aux = primero;
+        boolean sw = true;
+        while (aux != null && sw == true) {
+            if (aux.getCodigoEjemplar() == codigo) {
+                sw = false;
+                return sw;
+            }
+            aux = aux.getLinkRight();
         }
-        libro.setLinkRight(null);
+        return sw;
     }
 
     public void verEjemplares() {
@@ -66,6 +81,4 @@ public class Autor {
     public Ejemplar getUltimo() {
         return ultimo;
     }
-    
-    
 }

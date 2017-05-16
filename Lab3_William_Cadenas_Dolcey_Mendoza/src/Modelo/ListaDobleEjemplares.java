@@ -31,7 +31,7 @@ public class ListaDobleEjemplares {
                 tamaño++;
             }
             aux.setLinkRight(null);
-            return "Nodo añadido con exito!";
+            return "Ejemplar añadido con exito!";
         }else{
             return "Ya se encuntra un ejemplar con el mismo codigo";
         }
@@ -41,7 +41,7 @@ public class ListaDobleEjemplares {
         aux = primero;
         while (aux != null) {
             System.out.println(aux.getNombre());
-            System.out.println("codigo:" + aux.getCodigoEmjemplar());
+            System.out.println("codigo:" + aux.getCodigoEjemplar());
             System.out.println("Estado:" + aux.getEstado());
             aux = aux.getLinkRight();
         }
@@ -51,7 +51,7 @@ public class ListaDobleEjemplares {
         aux = ultimo;
         while (aux != null) {
             System.out.println(aux.getNombre());
-            System.out.println("codigo:" + aux.getCodigoEmjemplar());
+            System.out.println("codigo:" + aux.getCodigoEjemplar());
             System.out.println("Estado:" + aux.getEstado());
             aux = aux.getLinkLeft();
         }
@@ -65,7 +65,7 @@ public class ListaDobleEjemplares {
         aux = primero;
         boolean sw = true;
         while (aux != null && sw == true) {
-            if (aux.getCodigoEmjemplar() == codigo) {
+            if (aux.getCodigoEjemplar() == codigo) {
                 sw = false;
                 return sw;
             }

@@ -60,7 +60,7 @@ class Ejemplar {
         return linkLeft;
     }
 
-    public int getCodigoEmjemplar() {
+    public int getCodigoEjemplar() {
         return codigoEmjemplar;
     }
     
