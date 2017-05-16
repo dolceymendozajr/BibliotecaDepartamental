@@ -34,7 +34,7 @@ public class MultilistaAutores {
     public void agregarNuevoLibro(String nombreA, String nombreL, int codigoL) {
         aux = buscarAutor(nombreA);
         if (aux != null) {
-            aux.agregarLibro(new Libro(nombreL, codigoL));
+            aux.agregarEjemplar(new Ejemplar(nombreL, codigoL));
         } else {
             System.out.println("El autor especificado no existe");
         }
@@ -43,13 +43,12 @@ public class MultilistaAutores {
     public boolean libroExiste(String nombreA, String nombreL) {
         aux = buscarAutor(nombreA);
         if (aux != null) {
-            Libro libro = aux.getPrimero();
+            Ejemplar libro = aux.getPrimero();
             while (libro != null) {
                 if (libro.getNombre().equalsIgnoreCase(nombreL)) {
-                    libro.updateNumeroEjemplares(1);//aumenta el numero de ejemplares de el libro
                     return true;
                 }
-                libro = libro.getLinkPrincipal();
+                libro = libro.getLinkRight();
             }
         } else {
             System.out.println("El autor especificado no existe");
@@ -60,14 +59,13 @@ public class MultilistaAutores {
     public boolean libroExiste(String nombreA, int codLibro) {
         aux = buscarAutor(nombreA);
         if (aux != null) {
-            Libro libro = aux.getPrimero();
+            Ejemplar libro = aux.getPrimero();
             while (libro != null) {
                 System.out.println("libro:" + libro.getNombre());
-                if (libro.getCodigoLibro() == codLibro) {
-                    libro.updateNumeroEjemplares(1);//aumenta el numero de ejemplares de el libro
+                if (libro.getCodigoEmjemplar() == codLibro) {
                     return true;
                 }
-                libro = libro.getLinkPrincipal();
+                libro = libro.getLinkRight();
             }
         } else {
             System.out.println("El autor especificado no existe");
@@ -97,7 +95,7 @@ public class MultilistaAutores {
     public void verlistaDeLibros(String nombre) {
         aux = buscarAutor(nombre);
         if (aux != null) {
-            aux.verLibros();
+            aux.verEjemplares();
         } else {
             System.out.println("El autor especificado no existe");
         }
@@ -106,12 +104,12 @@ public class MultilistaAutores {
     public String buscarNombre(String nombreA, int codLibro) {
         aux = buscarAutor(nombreA);
         if (aux != null) {
-            Libro libro = aux.getPrimero();
+            Ejemplar libro = aux.getPrimero();
             while (libro != null) {
-                if (libro.getCodigoLibro() == codLibro) {
+                if (libro.getCodigoEmjemplar() == codLibro) {
                     return libro.getNombre();
                 }
-                libro = libro.getLinkPrincipal();
+                libro = libro.getLinkRight();
             }
         } else {
             System.out.println("El autor especificado no existe");

@@ -9,29 +9,29 @@ public class Autor {
 
     private String nombre;
     private Autor linkPrincipal;
-    private Libro primero;
-    private Libro ultimo;
+    private Ejemplar primero;
+    private Ejemplar ultimo;
     private int numeroDelibros;
 
-    public void agregarLibro(Libro libro) {
+    public void agregarEjemplar(Ejemplar libro) {
         if (primero == null) {
             primero = libro;
             ultimo = libro;
             numeroDelibros = 1;
         } else {
-            libro.setLinkPrincipal(null);
-            ultimo.setLinkPrincipal(libro);
+            libro.setLinkRight(null);
+            ultimo.setLinkRight(libro);
             ultimo = libro;
             numeroDelibros++;
         }
-        libro.setLinkPrincipal(null);
+        libro.setLinkRight(null);
     }
 
-    public void verLibros() {
-        Libro aux = primero;
+    public void verEjemplares() {
+        Ejemplar aux = primero;
         while (aux != null) {
             System.out.println(aux.getNombre());
-            aux = aux.getLinkPrincipal();
+            aux = aux.getLinkRight();
         }
     }
 
@@ -59,11 +59,11 @@ public class Autor {
         this.linkPrincipal = linkPrincipal;
     }
 
-    public Libro getPrimero() {
+    public Ejemplar getPrimero() {
         return primero;
     }
 
-    public Libro getUltimo() {
+    public Ejemplar getUltimo() {
         return ultimo;
     }
     

@@ -7,9 +7,9 @@ package Modelo;
  */
 public class ListaDobleEjemplares {
 
-    private EjemplarDoble primero;
-    private EjemplarDoble ultimo;
-    private EjemplarDoble aux;
+    private Ejemplar primero;
+    private Ejemplar ultimo;
+    private Ejemplar aux;
     private int tamaño;
 
     public ListaDobleEjemplares() {
@@ -19,7 +19,7 @@ public class ListaDobleEjemplares {
 
     public String agregarEjemplar(String name, int codigo) {
         if (ValidacionCodEjem(codigo)){
-            aux = new EjemplarDoble(name, codigo);
+            aux = new Ejemplar(name, codigo);
             if (primero == null) {
                 primero = aux;
                 ultimo = aux;
