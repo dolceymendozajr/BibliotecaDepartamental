@@ -1,6 +1,7 @@
 package vista;
 
 import controlador.MainClass;
+import javax.swing.JOptionPane;
 
 public class Prestar extends javax.swing.JFrame {
 
@@ -106,10 +107,8 @@ public class Prestar extends javax.swing.JFrame {
     private void btn_PrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PrestarActionPerformed
         int codUsuario = Integer.parseInt(txt_CodUser.getText());
         int codEjem = Integer.parseInt(txt_CodEje.getText());
-        MainClass.prestarEjemplar(codUsuario,codEjem);
-         
-        //TODO crear el metodo que agrege un ejemplar existente a un afiliado previamente creado
-        //este metodo debe ubicarse en el main y recibe nameUser y CodEjem
+        MainClass.afi.verListaDeAfiliados();
+        JOptionPane.showMessageDialog(this, MainClass.prestarEjemplar(codUsuario,codEjem));
     }//GEN-LAST:event_btn_PrestarActionPerformed
 
     private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CodEjeMouseClicked

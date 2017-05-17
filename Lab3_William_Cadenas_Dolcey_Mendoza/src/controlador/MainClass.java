@@ -16,7 +16,7 @@ public class MainClass {
     private static Afiliar uv = new Afiliar();
     private static Prestar pv = new Prestar();
     private static Entregar ev = new Entregar();
-    private static MultilistaAfiliados afi = new MultilistaAfiliados();
+    public static MultilistaAfiliados afi = new MultilistaAfiliados();
     public static MultilistaAutores aut = new MultilistaAutores();
     public static ListaDobleEjemplares ldejem = new ListaDobleEjemplares();
     private static Date fechaActual;
@@ -37,7 +37,28 @@ public class MainClass {
 
         ev.setVisible(false);
         ev.setResizable(false);
-
+        
+        afi.InsertarAfiliado("Hector", 2001);
+        afi.InsertarAfiliado("Jose", 2002);
+        afi.InsertarAfiliado("Daniel", 2003);
+        
+        aut.AgregarAutor("Gabriel");
+        aut.AgregarAutor("Dolcey");
+        aut.AgregarAutor("William");
+        aut.agregarNuevoLibro("William", "la bolsa", 100);
+        aut.agregarNuevoLibro("William", "la bolsa e inversiones", 101);
+        aut.agregarNuevoLibro("William", "Mente millonaria", 103);
+        aut.agregarNuevoLibro("Dolcey", "Habitos de ricos", 200);
+        aut.agregarNuevoLibro("Gabriel", "Cien años de solded", 300);        
+        
+        ldejem.agregarEjemplar("la bolsa", 100);
+        ldejem.agregarEjemplar("la bolsa e inversiones", 101);
+        ldejem.agregarEjemplar("Mente millonaria", 103);
+        ldejem.agregarEjemplar( "Habitos de ricos", 200);
+        ldejem.agregarEjemplar( "Cien años de solded", 300);
+        
+        ldejem.verListaDesdeIncio();
+        aut.verListaDeAutores();
     }
 
     public static void verIngresar() {
@@ -75,8 +96,7 @@ public class MainClass {
                 } else {
                     return "Ya se encuntra un ejemplar con el mismo codigo";
                 }
-            } else//no existe el autor lo creamos !
-            {
+            } else{//no existe el autor lo creamos !
                 if (ldejem.agregarEjemplar(nameL, codEjem)) {
                     aut.AgregarAutor(autorName);
                     aut.agregarNuevoLibro(autorName, nameL, codEjem);
@@ -96,33 +116,23 @@ public class MainClass {
     public static String prestarEjemplar(int codUsuario, int codEjem) {
         Ejemplar ejemplar = ldejem.buscarCodEjem(codEjem);
         if (ejemplar != null) {//Existe el ejemplar con ese codigo
-            if (ejemplar.getEstado()) {//Se puede prestar
+            if (ejemplar.getEstado() == true) {//Se puede prestar
                 Afiliado afiliado = afi.buscarAfiliado(codUsuario);
                 if (afiliado != null) {//Existe el Usurario con ese codigo
                     ejemplar.setEstado(false);
                     ejemplar.setCodigoAfiliado(codUsuario);
-                    //TODO FALTO SET FECHA DE DEVOLUCION !!!!!!!!!!!!!!!!!!!!!!!
-                    //añade el libro al afiliado
                     afiliado.agregarEjemplar(ejemplar.clonar()); 
                     return "Accion completada con exito !!";
                 } else {//no existe el usuario
                     return "No se encontro ningun afiliado con ese codigo";
                 }
             } else {
-                return "ejemplar no disponible";
+                return "El ejemplar no se encuentra disponible";
             }
         } else {// no existe el ejemplar con el codigo
             return "no existe un ejemplar con dicho codigo";
         }
     }
     
-    public static String EntregarEjemplar(int user, int ejem){
-        if(ldejem.validacionCodEjem(ejem)){
-            ldejem.CambiarEstado(ejem, true);
-            afi.
-        }else{
-            return "Ejemplar no existente";
-        }
-    }
 
 }
