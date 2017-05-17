@@ -17,6 +17,7 @@ public class Afiliado {
     private Ejemplar primero;
     private Ejemplar ultimo;
     private Ejemplar aux;
+    private Ejemplar anteaux;
     private int numeroDeEjemplares;
 
     public Afiliado(String nombre, int codigo) {
@@ -81,4 +82,25 @@ public class Afiliado {
         return null;
     }
 
+    public void EliminarEjemplar(int codigoEjemplar) {
+        aux = primero;
+        anteaux=null;
+        boolean sw = false;
+        while(aux != null && sw == false){
+            if (aux.getCodigoEjemplar() == codigoEjemplar) {
+                sw = true;
+            }
+            anteaux = aux;
+            aux = aux.getLinkRight();
+        }
+        if (aux == primero) {
+            primero = aux.getLinkRight();
+            aux.setLinkRight(null);
+            aux.setLinkLeft(null);
+        }else{
+            anteaux.setLinkRight(aux.getLinkRight());
+            aux.setLinkRight(null);
+            aux.setLinkLeft(null);
+        }
+    }
 }

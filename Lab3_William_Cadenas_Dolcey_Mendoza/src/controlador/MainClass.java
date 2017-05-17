@@ -133,7 +133,7 @@ public class MainClass {
                     return "No se encontro ningun afiliado con ese codigo";
                 }
             } else {
-                return "El ejemplar no se encuentra disponible";
+                return "El ejemplar no se encuentra disponible(se encuentra bajo prestamo de otro usuario)";
             }
         } else {// no existe el ejemplar con el codigo
             return "no existe un ejemplar con dicho codigo";
@@ -150,7 +150,7 @@ public class MainClass {
                 if (afiliado != null) {
                     ejemplar.setEstado(true);
                     ejemplar.setCodigoAfiliado(0);
-//                    afiliado.EliminarEjemplar(ejemplar.getCodigoEjemplar());
+                    afiliado.EliminarEjemplar(ejemplar.getCodigoEjemplar());
                     return afi.CalcularMulta(fechaentrega, ejemplar.getCodigoEjemplar(), afiliado);
                 } else {
                     return "Afiliado inexistente";
