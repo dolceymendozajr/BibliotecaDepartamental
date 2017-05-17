@@ -17,7 +17,7 @@ public class ListaDobleEjemplares {
         this.ultimo = null;
     }
 
-    public String agregarEjemplar(String name, int codigo) {
+    public boolean agregarEjemplar(String name, int codigo) {
         if (ValidacionCodEjem(codigo)){
             aux = new Ejemplar(name, codigo);
             if (primero == null) {
@@ -31,9 +31,9 @@ public class ListaDobleEjemplares {
                 tamaño++;
             }
             aux.setLinkRight(null);
-            return "Ejemplar añadido con exito!";
+            return true;
         }else{
-            return "Ya se encuntra un ejemplar con el mismo codigo";
+            return false;
         }
     }
 

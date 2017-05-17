@@ -21,7 +21,7 @@ public class MainClass {
     private static Date fechaActual;
 
     public static void main(String[] args) {
-        
+
         mv.setVisible(true);
         mv.setResizable(false);
 
@@ -70,31 +70,25 @@ public class MainClass {
         boolean observador = aut.libroExiste(autorName, codEjem);
         if (observador == true) {//libro si existe
             return "El libro ya existe con el mismo codigo";
-        }else{//hay que averiguar quien no existe
+        } else {//hay que averiguar quien no existe
             Autor autor = aut.buscarAutor(autorName);
             if (autor != null) {//el autor existe, lo que no existe es el libro, lo creamos!
-                aut.agregarNuevoLibro(autor, nameL, codEjem);
-                return ldejem.agregarEjemplar(nameL, codEjem);
-            }else{//no existe el autor lo creamos !
+                if (ldejem.agregarEjemplar(nameL, codEjem)) {
+                    aut.agregarNuevoLibro(autor, nameL, codEjem);
+                    return "Ejemplar añadido con exito!";
+                } else {
+                    return "Ya se encuntra un ejemplar con el mismo codigo";
+                }
+            } else//no existe el autor lo creamos !
+            if (ldejem.agregarEjemplar(nameL, codEjem)) {
                 aut.AgregarAutor(autorName);
                 aut.agregarNuevoLibro(autorName, nameL, codEjem);
-                return ldejem.agregarEjemplar(nameL, codEjem);
+                return "Ejemplar añadido con exito!";
+            } else {
+                return "Ya se encuntra un ejemplar con el mismo codigo";
             }
-        }    
+        }
     }
-
-    //Todo por eliminar
-    
-//    public static String agregarEjemplar(int codLibro, int codEjem, String autorName) {
-//        boolean observador = aut.libroExiste(autorName, codLibro);
-//        String nombreLibro = aut.buscarNombre(autorName, codLibro);
-//        if (observador == true) {//libro si existe
-//            return ldejem.agregarEjemplar(nombreLibro, codEjem);
-//        }
-//        //ldejem.verListaDesdeIncio();
-//        //System.out.println("tamaño:" + ldejem.getTamaño());
-//        return "el autor o el libro no ese encuenttran en la base datos";
-//    }
 
     public static void setFechaActual(int dia, int mes, int año) {
         fechaActual = new Date(año, mes, dia);
