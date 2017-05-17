@@ -85,4 +85,13 @@ public class Ejemplar {
         Ejemplar ejemplar = new Ejemplar(nombre, estado, codigoEmjemplar, codigoAfiliado, fechaDevolucion);
         return ejemplar;
     }
+
+    public void setFechaDevolucion(GregorianCalendar fechaDevolucion) {
+        this.fechaDevolucion = fechaDevolucion;
+    }
+
+    public GregorianCalendar getFechaDevolucion() {
+        return fechaDevolucion;
+    }
+    
 }

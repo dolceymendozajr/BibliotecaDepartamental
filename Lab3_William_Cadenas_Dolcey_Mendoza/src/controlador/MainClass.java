@@ -6,8 +6,10 @@ import Modelo.Ejemplar;
 import Modelo.ListaDobleEjemplares;
 import Modelo.MultilistaAfiliados;
 import Modelo.MultilistaAutores;
+import java.util.Calendar;
 import java.util.Date;
 import vista.*;
+import java.util.GregorianCalendar;
 
 public class MainClass {
 
@@ -121,6 +123,10 @@ public class MainClass {
                 if (afiliado != null) {//Existe el Usurario con ese codigo
                     ejemplar.setEstado(false);
                     ejemplar.setCodigoAfiliado(codUsuario);
+                    GregorianCalendar fechadev=new GregorianCalendar();
+                    fechadev.add(Calendar.DAY_OF_MONTH, 4);
+                    ejemplar.setFechaDevolucion(fechadev);
+                    //añade el libro al afiliado
                     afiliado.agregarEjemplar(ejemplar.clonar()); 
                     return "Accion completada con exito !!";
                 } else {//no existe el usuario
@@ -134,5 +140,25 @@ public class MainClass {
         }
     }
     
+    public static String EntregarEjemplar(int user, int ejem, GregorianCalendar fechaentrega) {
+        Ejemplar ejemplar = ldejem.buscarCodEjem(ejem);
+        if (ejemplar != null) {
+            if (ejemplar.getEstado()) {
+                return "Ejemplar ya entregado";
+            } else {
+                Afiliado afiliado = afi.buscarAfiliado(user);
+                if (afiliado != null) {
+                    ejemplar.setEstado(true);
+                    ejemplar.setCodigoAfiliado(0);
+//                    afiliado.EliminarEjemplar(ejemplar.getCodigoEjemplar());
+                    return afi.CalcularMulta(fechaentrega, ejemplar.getCodigoEjemplar(), afiliado);
+                } else {
+                    return "Afiliado inexistente";
+                }
+            }
+        } else {
+            return "Ejemplar inexistente";
+        }
+    }
 
 }

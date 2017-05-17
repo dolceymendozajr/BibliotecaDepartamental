@@ -1,5 +1,7 @@
 package Modelo;
 
+import java.util.GregorianCalendar;
+
 /**
  * Una multilista con la información de todos los afiliados a la biblioteca
  * (Está lista se encuentra ordenada), y los ejemplares que tiene a su cargo.
@@ -85,6 +87,19 @@ public class MultilistaAfiliados {
 
     public int getTamaño() {
         return tamaño;
+    }
+    
+    public String CalcularMulta(GregorianCalendar fechaent, int ejem, Afiliado afiliado){
+        long multa=0;
+        Ejemplar ejemplar=afiliado.buscarCodEjem(ejem);
+        long dif=ejemplar.getFechaDevolucion().getTimeInMillis()-fechaent.getTimeInMillis();
+        if(fechaent.after(ejemplar.getFechaDevolucion())){
+            dif=dif/(3600*24*1000);
+            multa=dif*1000;
+            multa=multa*-1;
+            multa=multa+1000;
+        }
+        return "Multa de "+multa;
     }
 
 }

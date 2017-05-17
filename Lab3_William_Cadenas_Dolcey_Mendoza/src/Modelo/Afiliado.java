@@ -70,4 +70,15 @@ public class Afiliado {
         System.out.println("__Fin libros__");
     }
 
+    public Ejemplar buscarCodEjem(int codigo) {
+        aux = primero;
+        while (aux != null) {
+            if (aux.getCodigoEjemplar() == codigo) {
+                return aux;
+            }
+            aux = aux.getLinkRight();
+        }
+        return null;
+    }
+
 }

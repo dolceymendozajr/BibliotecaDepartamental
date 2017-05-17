@@ -1,6 +1,7 @@
 package vista;
 
 import controlador.MainClass;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
 public class Entregar extends javax.swing.JFrame {
@@ -106,7 +107,11 @@ public class Entregar extends javax.swing.JFrame {
     private void btn_EntregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntregarActionPerformed
         int cod_user=Integer.parseInt(txt_CodUser.getText());
         int cod_ejem=Integer.parseInt(txt_CodEje.getText());
-        JOptionPane.showMessageDialog(this, MainClass.EntregarEjemplar(cod_user,cod_ejem));
+        int dia=Integer.parseInt(JOptionPane.showInputDialog("Digite el numero del dia de devolución"));
+        int mes=Integer.parseInt(JOptionPane.showInputDialog("Digite el numero del mes"));
+        int año=Integer.parseInt(JOptionPane.showInputDialog("Digite el numero del año"));
+        GregorianCalendar fecha = new GregorianCalendar(año, mes-1, dia);
+        JOptionPane.showMessageDialog(this, MainClass.EntregarEjemplar(cod_user,cod_ejem, fecha));
     }//GEN-LAST:event_btn_EntregarActionPerformed
 
     private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CodEjeMouseClicked
