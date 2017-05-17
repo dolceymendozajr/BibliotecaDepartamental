@@ -1,6 +1,8 @@
 package controlador;
 
+import Modelo.Afiliado;
 import Modelo.Autor;
+import Modelo.Ejemplar;
 import Modelo.ListaDobleEjemplares;
 import Modelo.MultilistaAfiliados;
 import Modelo.MultilistaAutores;
@@ -74,12 +76,14 @@ public class MainClass {
                     return "Ya se encuntra un ejemplar con el mismo codigo";
                 }
             } else//no existe el autor lo creamos !
-            if (ldejem.agregarEjemplar(nameL, codEjem)) {
-                aut.AgregarAutor(autorName);
-                aut.agregarNuevoLibro(autorName, nameL, codEjem);
-                return "Ejemplar añadido con exito!";
-            } else {
-                return "Ya se encuntra un ejemplar con el mismo codigo";
+            {
+                if (ldejem.agregarEjemplar(nameL, codEjem)) {
+                    aut.AgregarAutor(autorName);
+                    aut.agregarNuevoLibro(autorName, nameL, codEjem);
+                    return "Ejemplar añadido con exito!";
+                } else {
+                    return "Ya se encuntra un ejemplar con el mismo codigo";
+                }
             }
         }
     }
@@ -89,9 +93,26 @@ public class MainClass {
         //System.out.println("fecha actual:" + fechaActual.getDate() + "/" + fechaActual.getMonth() + "/" + fechaActual.getYear());    
     }
 
-    public static void prestarEjemplar(String nameUsuario, int codEjem) {
-        if(ldejem.validacionCodEjem(codEjem)){
-            
+    public static String prestarEjemplar(int codUsuario, int codEjem) {
+        Ejemplar ejemplar = ldejem.buscarCodEjem(codEjem);
+        if (ejemplar != null) {//Existe el ejemplar con ese codigo
+            if (ejemplar.getEstado()) {//Se puede prestar
+                Afiliado afiliado = afi.buscarAfiliado(codUsuario);
+                if (afiliado != null) {//Existe el Usurario con ese codigo
+                    ejemplar.setEstado(false);
+                    ejemplar.setCodigoAfiliado(codUsuario);
+                    //TODO FALTO SET FECHA DE DEVOLUCION !!!!!!!!!!!!!!!!!!!!!!!
+                    //añade el libro al afiliado
+                    afiliado.agregarEjemplar(ejemplar.clonar()); 
+                    return "Accion completada con exito !!";
+                } else {//no existe el usuario
+                    return "No se encontro ningun afiliado con ese codigo";
+                }
+            } else {
+                return "ejemplar no disponible";
+            }
+        } else {// no existe el ejemplar con el codigo
+            return "no existe un ejemplar con dicho codigo";
         }
     }
     
