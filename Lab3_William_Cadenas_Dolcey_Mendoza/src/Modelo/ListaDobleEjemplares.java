@@ -45,7 +45,7 @@ public class ListaDobleEjemplares {
             System.out.println("codigo:" + aux.getCodigoEjemplar());
             System.out.println("Estado:" + aux.getEstado());
             aux = aux.getLinkRight();
-            System.out.println("--------------------------");
+            System.out.println("");
         }
         System.out.println("-----------FIN-------------");
     }

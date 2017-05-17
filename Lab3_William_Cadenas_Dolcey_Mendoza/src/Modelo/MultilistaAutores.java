@@ -84,7 +84,7 @@ public class MultilistaAutores {
             System.out.println("Nombre: "+aux.getNombre());
             aux.verEjemplares();
             aux = aux.getLinkPrincipal();
-            System.out.println("********************");
+            System.out.println("");
         }
         System.out.println("*******FIN*******");
     }

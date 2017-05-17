@@ -49,7 +49,7 @@ public class Autor {
             System.out.println("nombre libro:"+aux.getNombre());
             System.out.println("codigo:"+aux.getCodigoEjemplar());
             aux = aux.getLinkRight();
-            System.out.println("_____________________");
+            System.out.println("");
         }
         System.out.println("_______Fin libros_______");
     }

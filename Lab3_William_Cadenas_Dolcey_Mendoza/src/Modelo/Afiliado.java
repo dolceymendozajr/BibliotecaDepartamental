@@ -14,8 +14,8 @@ public class Afiliado {
     private String nombre;
     private int codigo;
     private Afiliado linkPrincipal;
-    private Ejemplar  primero;
-    private Ejemplar  ultimo;
+    private Ejemplar primero;
+    private Ejemplar ultimo;
     private Ejemplar aux;
     private int numeroDeEjemplares;
 
@@ -57,6 +57,17 @@ public class Afiliado {
 
     public int getNumeroDeEjemplares() {
         return numeroDeEjemplares;
+    }
+
+    void verlibros() {
+        Ejemplar aux = primero;
+        System.out.println("__Libros prestados__");
+        while (aux != null) {
+            System.out.println("nombre libro:" + aux.getNombre());
+            System.out.println("codigo:" + aux.getCodigoEjemplar());
+            aux = aux.getLinkRight();
+        }
+        System.out.println("__Fin libros__");
     }
 
 }

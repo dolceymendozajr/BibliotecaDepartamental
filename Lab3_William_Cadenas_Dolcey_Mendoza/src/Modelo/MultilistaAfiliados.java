@@ -64,6 +64,7 @@ public class MultilistaAfiliados {
         System.out.println("Inicio");
         while (aux != null) {
             System.out.println(aux.getNombre() + "," + aux.getCodigo());
+            aux.verlibros();
             aux = aux.getLinkPrincipal();
         }
         System.out.println("Fin");
