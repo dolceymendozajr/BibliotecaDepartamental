@@ -104,9 +104,10 @@ public class Prestar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_PrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PrestarActionPerformed
-        String nameUsuario = txt_CodUser.getText();
+        int codUsuario = Integer.parseInt(txt_CodUser.getText());
         int codEjem = Integer.parseInt(txt_CodEje.getText());
-        MainClass.prestarEjemplar(nameUsuario,codEjem);
+        MainClass.prestarEjemplar(codUsuario,codEjem);
+         
         //TODO crear el metodo que agrege un ejemplar existente a un afiliado previamente creado
         //este metodo debe ubicarse en el main y recibe nameUser y CodEjem
     }//GEN-LAST:event_btn_PrestarActionPerformed
