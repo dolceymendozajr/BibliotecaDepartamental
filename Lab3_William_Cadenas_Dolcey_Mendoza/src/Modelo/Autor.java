@@ -44,10 +44,14 @@ public class Autor {
 
     public void verEjemplares() {
         Ejemplar aux = primero;
+        System.out.println("_______Lista de Libros_______");
         while (aux != null) {
-            System.out.println(aux.getNombre());
+            System.out.println("nombre libro:"+aux.getNombre());
+            System.out.println("codigo:"+aux.getCodigoEjemplar());
             aux = aux.getLinkRight();
+            System.out.println("_____________________");
         }
+        System.out.println("_______Fin libros_______");
     }
 
     public Autor(String nombre) {

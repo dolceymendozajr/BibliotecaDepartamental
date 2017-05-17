@@ -16,12 +16,12 @@ public class MainClass {
     private static Entregar ev = new Entregar();
     private static SetFecha fecha = new SetFecha();
     private static MultilistaAfiliados afi = new MultilistaAfiliados();
-    private static MultilistaAutores aut = new MultilistaAutores();
-    private static ListaDobleEjemplares ldejem = new ListaDobleEjemplares();
+    public static MultilistaAutores aut = new MultilistaAutores();
+    public static ListaDobleEjemplares ldejem = new ListaDobleEjemplares();
     private static Date fechaActual;
 
     public static void main(String[] args) {
-
+        
         mv.setVisible(true);
         mv.setResizable(false);
 
@@ -69,7 +69,7 @@ public class MainClass {
     public static String agregarEjemplar(String nameL, int codEjem, String autorName) {
         boolean observador = aut.libroExiste(autorName, codEjem);
         if (observador == true) {//libro si existe
-            return "El libro ya existe con el mismo codigo, autor y nombre";
+            return "El libro ya existe con el mismo codigo";
         }else{//hay que averiguar quien no existe
             Autor autor = aut.buscarAutor(autorName);
             if (autor != null) {//el autor existe, lo que no existe es el libro, lo creamos!
@@ -81,8 +81,6 @@ public class MainClass {
                 return ldejem.agregarEjemplar(nameL, codEjem);
             }
         }    
-        //ldejem.verListaDesdeIncio();
-        //System.out.println("tamaño:" + ldejem.getTamaño());    
     }
 
     //Todo por eliminar

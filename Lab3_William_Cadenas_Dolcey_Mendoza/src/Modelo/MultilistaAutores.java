@@ -79,19 +79,14 @@ public class MultilistaAutores {
 
     public void verListaDeAutores() {
         aux = primero;
+        System.out.println("*******LISTA AUTORES*******");
         while (aux != null) {
-            System.out.println(aux.getNombre());
-            aux = aux.getLinkPrincipal();
-        }
-    }
-
-    public void verlistaDeLibros(String nombre) {
-        aux = buscarAutor(nombre);
-        if (aux != null) {
+            System.out.println("Nombre: "+aux.getNombre());
             aux.verEjemplares();
-        } else {
-            System.out.println("El autor especificado no existe");
+            aux = aux.getLinkPrincipal();
+            System.out.println("********************");
         }
+        System.out.println("*******FIN*******");
     }
 
     public String buscarNombre(String nombreA, int codLibro) {

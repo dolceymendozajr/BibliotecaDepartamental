@@ -39,12 +39,15 @@ public class ListaDobleEjemplares {
 
     public void verListaDesdeIncio() {
         aux = primero;
+        System.out.println("-----LISTA DOBLE ENLAZADA-----");
         while (aux != null) {
             System.out.println(aux.getNombre());
             System.out.println("codigo:" + aux.getCodigoEjemplar());
             System.out.println("Estado:" + aux.getEstado());
             aux = aux.getLinkRight();
+            System.out.println("--------------------------");
         }
+        System.out.println("-----------FIN-------------");
     }
 
     public void verListaDesdeFin() {

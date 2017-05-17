@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.MainClass;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -76,6 +77,11 @@ public class Ingresar extends javax.swing.JFrame {
                 txt_AutorNameMouseClicked(evt);
             }
         });
+        txt_AutorName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_AutorNameKeyPressed(evt);
+            }
+        });
 
         txt_CodLib.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
         txt_CodLib.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -136,11 +142,12 @@ public class Ingresar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
-            int codEjem = Integer.parseInt(txt_CodLib.getText());
-            String libroName = txt_LibroName.getText().toLowerCase();
-            String autorName = txt_AutorName.getText().toLowerCase();
-            JOptionPane.showMessageDialog(this, MainClass.agregarEjemplar(libroName, codEjem, autorName));
-
+        int codEjem = Integer.parseInt(txt_CodLib.getText());
+        String libroName = txt_LibroName.getText().toLowerCase();
+        String autorName = txt_AutorName.getText().toLowerCase();
+        JOptionPane.showMessageDialog(this, MainClass.agregarEjemplar(libroName, codEjem, autorName));
+        MainClass.ldejem.verListaDesdeIncio();
+        MainClass.aut.verListaDeAutores();
     }//GEN-LAST:event_btn_IngresarActionPerformed
 
     private void txt_LibroNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_LibroNameMouseClicked
@@ -155,6 +162,12 @@ public class Ingresar extends javax.swing.JFrame {
         txt_CodLib.setText("");
     }//GEN-LAST:event_txt_CodLibMouseClicked
 
+    private void txt_AutorNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_AutorNameKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.btn_IngresarActionPerformed(null);
+        }
+    }//GEN-LAST:event_txt_AutorNameKeyPressed
+    
     /**
      * @param args the command line arguments
      */
