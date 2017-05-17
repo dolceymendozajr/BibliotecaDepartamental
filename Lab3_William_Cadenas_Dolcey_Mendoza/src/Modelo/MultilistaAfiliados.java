@@ -26,7 +26,6 @@ public class MultilistaAfiliados {
             primero = aux;
             ultimo = aux;
             tamaño = 1;
-            aux.setLinkEjemplar(null);
             aux.setLinkPrincipal(null);
         } else {
             aux = buscarAfiliado(codigo);//busca si existe un afiliado con el mismo cod 
@@ -40,7 +39,6 @@ public class MultilistaAfiliados {
                     p = p.getLinkPrincipal();
                 }
                 Afiliado q = new Afiliado(nombre, codigo);
-                q.setLinkEjemplar(null);
                 if (p.getCodigo() > codigo) {
                     if (p == primero) {
                         q.setLinkPrincipal(primero);//cuando es menor que el ptr(primero)

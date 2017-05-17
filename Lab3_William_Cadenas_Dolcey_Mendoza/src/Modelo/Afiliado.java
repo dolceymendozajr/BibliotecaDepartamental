@@ -14,9 +14,9 @@ public class Afiliado {
     private String nombre;
     private int codigo;
     private Afiliado linkPrincipal;
-    private Ejemplar linkEjemplar;
-    private Afiliado primero;
-    private Afiliado ultimo;
+    private Ejemplar  primero;
+    private Ejemplar  ultimo;
+    private Ejemplar aux;
     private int numeroDeEjemplares;
 
     public Afiliado(String nombre, int codigo) {
@@ -24,14 +24,25 @@ public class Afiliado {
         this.codigo = codigo;
     }
 
+    public void agregarEjemplar(Ejemplar ejemplar) {
+        aux = ejemplar;
+        if (primero == null) {
+            primero = aux;
+            ultimo = aux;
+            aux.setLinkLeft(null);
+            numeroDeEjemplares = 1;
+        } else {
+            ultimo.setLinks(aux);
+            ultimo = aux;
+            numeroDeEjemplares++;
+        }
+        aux.setLinkRight(null);
+    }
+
     public void setLinkPrincipal(Afiliado linkPrincipal) {
         this.linkPrincipal = linkPrincipal;
     }
 
-    public void setLinkEjemplar(Ejemplar linkEjemplar) {
-        this.linkEjemplar = linkEjemplar;
-    }
-    
     public String getNombre() {
         return nombre;
     }
@@ -44,12 +55,8 @@ public class Afiliado {
         return linkPrincipal;
     }
 
-    public Ejemplar getLinkEjemplar() {
-        return linkEjemplar;
-    }
-
     public int getNumeroDeEjemplares() {
         return numeroDeEjemplares;
     }
-        
+
 }

@@ -18,7 +18,7 @@ public class ListaDobleEjemplares {
     }
 
     public boolean agregarEjemplar(String name, int codigo) {
-        if (validacionCodEjem(codigo)){
+        if (validacionCodEjem(codigo)) {
             aux = new Ejemplar(name, codigo);
             if (primero == null) {
                 primero = aux;
@@ -32,7 +32,7 @@ public class ListaDobleEjemplares {
             }
             aux.setLinkRight(null);
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -72,17 +72,23 @@ public class ListaDobleEjemplares {
                 sw = false;
                 return sw;
             }
-            aux =  aux.getLinkRight();
+            aux = aux.getLinkRight();
         }
         return sw;
     }
-    
-    public void CambiarEstado(int codEjem, boolean estado){
-        aux=primero;
-        while(aux!=null){
-            if (aux.getCodigoEjemplar()==codEjem) {
-                aux.setEstado(estado);
+
+    public Ejemplar buscarCodEjem(int codigo) {
+        aux = primero;
+        while (aux != null) {
+            if (aux.getCodigoEjemplar() == codigo) {
+                return aux;
             }
+            aux = aux.getLinkRight();
         }
+        return null;
+    }
+
+    public void CambiarEstado(Ejemplar ejemplar, boolean estado) {
+       ejemplar.setEstado(estado);
     }
 }

@@ -5,19 +5,19 @@
  */
 package Modelo;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
  * @author wcadenas
  */
-class Ejemplar {
+public class Ejemplar {
 
     private String nombre;
     private boolean estado;
     private int codigoEmjemplar;
     private int codigoAfiliado;
-    private Date fecha;//aun no estoy seguro se dejar este atributo de tipo date 
+    private GregorianCalendar fechaDevolucion;//aun no estoy seguro se dejar este atributo de tipo date 
     private Ejemplar linkRight, linkLeft;
 
     public Ejemplar(String nombre, int codigoEmjemplar) {
@@ -26,6 +26,15 @@ class Ejemplar {
         this.estado = true;
         this.codigoAfiliado = 0;
     }
+
+    public Ejemplar(String nombre, boolean estado, int codigoEmjemplar, int codigoAfiliado,GregorianCalendar fecha) {
+        this.nombre = nombre;
+        this.estado = estado;
+        this.codigoEmjemplar = codigoEmjemplar;
+        this.codigoAfiliado = codigoAfiliado;
+        this.fechaDevolucion = fecha;
+    }
+    
     
     void setLinks(Ejemplar aux) {
         this.linkRight = aux;
@@ -67,5 +76,13 @@ class Ejemplar {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    public void setCodigoAfiliado(int codigoAfiliado) {
+        this.codigoAfiliado = codigoAfiliado;
+    }
     
+    public Ejemplar clonar(){
+        Ejemplar ejemplar = new Ejemplar(nombre, estado, codigoEmjemplar, codigoAfiliado, fechaDevolucion);
+        return ejemplar;
+    }
 }
