@@ -20,7 +20,6 @@ public class MainView extends javax.swing.JFrame {
         btn_Afiiliar = new javax.swing.JButton();
         btn_Ingresar = new javax.swing.JButton();
         btn_Entregar = new javax.swing.JButton();
-        btn_SetFecha = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,17 +74,6 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        btn_SetFecha.setBackground(new java.awt.Color(250, 250, 250));
-        btn_SetFecha.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
-        btn_SetFecha.setText("Set fecha actual");
-        btn_SetFecha.setToolTipText("");
-        btn_SetFecha.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btn_SetFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_SetFechaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -98,8 +86,7 @@ public class MainView extends javax.swing.JFrame {
                         .addComponent(btn_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btn_Afiiliar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btn_Prestar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_Entregar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_SetFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_Entregar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -118,9 +105,7 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(btn_Prestar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_Entregar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_SetFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,10 +138,6 @@ public class MainView extends javax.swing.JFrame {
         MainClass.verEntregar();
     }//GEN-LAST:event_btn_EntregarActionPerformed
 
-    private void btn_SetFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SetFechaActionPerformed
-        MainClass.verSetFecha();
-    }//GEN-LAST:event_btn_SetFechaActionPerformed
-
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -170,7 +151,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btn_Entregar;
     private javax.swing.JButton btn_Ingresar;
     private javax.swing.JButton btn_Prestar;
-    private javax.swing.JButton btn_SetFecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

@@ -63,6 +63,9 @@ class Ejemplar {
     public int getCodigoEjemplar() {
         return codigoEmjemplar;
     }
-    
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
     
 }

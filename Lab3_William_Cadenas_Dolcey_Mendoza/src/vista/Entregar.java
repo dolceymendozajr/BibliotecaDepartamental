@@ -1,5 +1,8 @@
 package vista;
 
+import controlador.MainClass;
+import javax.swing.JOptionPane;
+
 public class Entregar extends javax.swing.JFrame {
 
     public Entregar() {
@@ -101,8 +104,9 @@ public class Entregar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_EntregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EntregarActionPerformed
-        String cod_user=txt_CodUser.getText();
-        String cod_ejem=txt_CodEje.getText();
+        int cod_user=Integer.parseInt(txt_CodUser.getText());
+        int cod_ejem=Integer.parseInt(txt_CodEje.getText());
+        JOptionPane.showMessageDialog(this, MainClass.EntregarEjemplar(cod_user,cod_ejem));
     }//GEN-LAST:event_btn_EntregarActionPerformed
 
     private void txt_CodEjeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_CodEjeMouseClicked

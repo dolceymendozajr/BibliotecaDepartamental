@@ -14,7 +14,6 @@ public class MainClass {
     private static Afiliar uv = new Afiliar();
     private static Prestar pv = new Prestar();
     private static Entregar ev = new Entregar();
-    private static SetFecha fecha = new SetFecha();
     private static MultilistaAfiliados afi = new MultilistaAfiliados();
     public static MultilistaAutores aut = new MultilistaAutores();
     public static ListaDobleEjemplares ldejem = new ListaDobleEjemplares();
@@ -37,17 +36,12 @@ public class MainClass {
         ev.setVisible(false);
         ev.setResizable(false);
 
-        fecha.setVisible(false);
-        fecha.setResizable(false);
     }
 
     public static void verIngresar() {
         iv.setVisible(true);
     }
 
-    public static void verSetFecha() {
-        fecha.setVisible(true);
-    }
 
     public static void verUsuario() {
         uv.setVisible(true);
@@ -98,6 +92,15 @@ public class MainClass {
     public static void prestarEjemplar(String nameUsuario, int codEjem) {
         if(ldejem.validacionCodEjem(codEjem)){
             
+        }
+    }
+    
+    public static String EntregarEjemplar(int user, int ejem){
+        if(ldejem.validacionCodEjem(ejem)){
+            ldejem.CambiarEstado(ejem, true);
+            afi.
+        }else{
+            return "Ejemplar no existente";
         }
     }
 

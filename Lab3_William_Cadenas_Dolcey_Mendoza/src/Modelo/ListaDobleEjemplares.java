@@ -76,4 +76,13 @@ public class ListaDobleEjemplares {
         }
         return sw;
     }
+    
+    public void CambiarEstado(int codEjem, boolean estado){
+        aux=primero;
+        while(aux!=null){
+            if (aux.getCodigoEjemplar()==codEjem) {
+                aux.setEstado(estado);
+            }
+        }
+    }
 }
