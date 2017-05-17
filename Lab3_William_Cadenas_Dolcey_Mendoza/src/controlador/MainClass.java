@@ -150,7 +150,7 @@ public class MainClass {
                 if (afiliado != null) {
                     ejemplar.setEstado(true);
                     ejemplar.setCodigoAfiliado(0);
-                    afiliado.EliminarEjemplar(ejemplar.getCodigoEjemplar());
+                    //afiliado.EliminarEjemplar(ejemplar.getCodigoEjemplar());
                     return afi.CalcularMulta(fechaentrega, ejemplar.getCodigoEjemplar(), afiliado);
                 } else {
                     return "Afiliado inexistente";
