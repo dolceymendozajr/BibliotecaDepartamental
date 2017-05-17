@@ -1,5 +1,7 @@
 package vista;
 
+import controlador.MainClass;
+
 public class Prestar extends javax.swing.JFrame {
 
     public Prestar() {
@@ -103,8 +105,9 @@ public class Prestar extends javax.swing.JFrame {
 
     private void btn_PrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PrestarActionPerformed
         String nameUsuario = txt_CodUser.getText();
-        String codEjem = txt_CodEje.getText();
-        //TODO crear el metodo que agrege un ejemplar existennte a un afiliado previamente creado
+        int codEjem = Integer.parseInt(txt_CodEje.getText());
+        MainClass.prestarEjemplar(nameUsuario,codEjem);
+        //TODO crear el metodo que agrege un ejemplar existente a un afiliado previamente creado
         //este metodo debe ubicarse en el main y recibe nameUser y CodEjem
     }//GEN-LAST:event_btn_PrestarActionPerformed
 

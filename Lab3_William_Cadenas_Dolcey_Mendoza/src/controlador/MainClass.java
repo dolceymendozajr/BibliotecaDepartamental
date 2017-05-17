@@ -95,4 +95,10 @@ public class MainClass {
         //System.out.println("fecha actual:" + fechaActual.getDate() + "/" + fechaActual.getMonth() + "/" + fechaActual.getYear());    
     }
 
+    public static void prestarEjemplar(String nameUsuario, int codEjem) {
+        if(ldejem.validacionCodEjem(codEjem)){
+            
+        }
+    }
+
 }

@@ -18,7 +18,7 @@ public class ListaDobleEjemplares {
     }
 
     public boolean agregarEjemplar(String name, int codigo) {
-        if (ValidacionCodEjem(codigo)){
+        if (validacionCodEjem(codigo)){
             aux = new Ejemplar(name, codigo);
             if (primero == null) {
                 primero = aux;
@@ -64,7 +64,7 @@ public class ListaDobleEjemplares {
         return tamaño;
     }
 
-    private boolean ValidacionCodEjem(int codigo) {
+    public boolean validacionCodEjem(int codigo) {
         aux = primero;
         boolean sw = true;
         while (aux != null && sw == true) {
